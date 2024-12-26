@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Rasya Febrian Dema</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #4facfe;
+            margin-bottom: 10px;
+        }
+        .sidebar .profile h2 {
+            font-size: 1.5rem;
+            margin: 10px 0 5px;
+            color: #4facfe;
+        }
+        .sidebar .profile p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .sidebar a.linkedin-link {
+            text-decoration: none;
+            color: #fff;
+            background: #0077b5;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: block;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .sidebar a.linkedin-link:hover {
+            background: #005582;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #4facfe;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background: #4facfe;
+            color: #fff;
+        }
+
+        /* Konten Utama */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #4facfe;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Bagian Proyek */
+        .projects {
+            margin: 30px 0;
+        }
+        .projects h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .project-item {
+            background: #fff;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .project-item h3 {
+            font-size: 1.5rem;
+            color: #4facfe;
+        }
+        .project-item p {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px 0;
+            padding-bottom: 10px;
+        }
+        .project-item a {
+            text-decoration: none;
+            color: #fff;
+            background: #4facfe;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .project-item a:hover {
+            background: #0077b5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4facfe;
+            color: #fff;
+            border-radius: 8px;
+        }
+        footer p {
+            font-size: 1rem;
+        }
+        img {
+            height: 30%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="../1fc071d4-cc31-4430-9b37-3488161d5728.jpg" alt="Foto Rasya Febrian Dema">
+            <h2>Rasya Febrian Dema</h2>
+            <a href="https://www.linkedin.com/in/rasya-febrian-dema-811690297/" class="linkedin-link" target="_blank">Kunjungi LinkedIn</a>
+        </div>
+        <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="../about.html">About Me</a></li>
+            <li><a href="../tugas.html">Project</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Konten Utama -->
+    <div class="main-content">
+        <code style="border-radius: 10px; display:block; white-space:pre-wrap;background: hsl(0, 0%, 100%); ">
+            import pygame
+            import random
+
+            # Inisialisasi pygame
+            pygame.init()
+
+            # Ukuran layar
+            WIDTH, HEIGHT = 400, 600
+            screen = pygame.display.set_mode((WIDTH, HEIGHT))
+            pygame.display.set_caption("Avoid the Falling Objects")
+
+            # Warna
+            WHITE = (255, 255, 255)
+            BLACK = (0, 0, 0)
+            RED = (255, 0, 0)
+
+            # Pengaturan pemain
+            player_size = 50
+            player_x = WIDTH // 2 - player_size // 2
+            player_y = HEIGHT - player_size - 10
+            player_speed = 5
+
+            # Pengaturan musuh
+            enemy_size = 50
+            enemy_speed = 5
+            enemy_list = []
+
+            # Fungsi untuk membuat musuh baru
+            def create_enemy():
+                x_pos = random.randint(0, WIDTH - enemy_size)
+                y_pos = 0 - enemy_size
+                enemy_list.append([x_pos, y_pos])
+
+            # Fungsi untuk menampilkan musuh di layar
+            def draw_enemies(enemy_list):
+                for enemy in enemy_list:
+                    pygame.draw.rect(screen, RED, (enemy[0], enemy[1], enemy_size, enemy_size))
+
+            # Fungsi untuk menggerakkan musuh
+            def update_enemy_positions(enemy_list):
+                global score
+                for enemy in enemy_list:
+                    enemy[1] += enemy_speed
+                    if enemy[1] >= HEIGHT:
+                        enemy_list.remove(enemy)
+                        score += 1
+
+            # Fungsi untuk mendeteksi tabrakan
+            def detect_collision(player_pos, enemy_pos):
+                p_x, p_y = player_pos
+                e_x, e_y = enemy_pos
+                if (e_x < p_x < e_x + enemy_size or e_x < p_x + player_size < e_x + enemy_size) and \
+                (e_y < p_y < e_y + enemy_size or e_y < p_y + player_size < e_y + enemy_size):
+                    return True
+                return False
+
+            # Game loop
+            clock = pygame.time.Clock()
+            score = 0
+            running = True
+            while running:
+                screen.fill(WHITE)
+
+                # Event loop
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        running = False
+
+                # Menggerakkan pemain
+                keys = pygame.key.get_pressed()
+                if keys[pygame.K_LEFT] and player_x - player_speed > 0:
+                    player_x -= player_speed
+                if keys[pygame.K_RIGHT] and player_x + player_size + player_speed < WIDTH:
+                    player_x += player_speed
+
+                # Membuat musuh baru
+                if random.randint(1, 20) == 1:
+                    create_enemy()
+
+                # Mengupdate posisi musuh
+                update_enemy_positions(enemy_list)
+
+                # Cek tabrakan
+                for enemy in enemy_list:
+                    if detect_collision((player_x, player_y), enemy):
+                        running = False
+
+                # Gambar pemain
+                pygame.draw.rect(screen, BLACK, (player_x, player_y, player_size, player_size))
+
+                # Gambar musuh
+                draw_enemies(enemy_list)
+
+                # Tampilkan skor
+                font = pygame.font.SysFont("monospace", 35)
+                score_text = font.render("Score: " + str(score), True, BLACK)
+                screen.blit(score_text, (10, 10))
+
+                pygame.display.flip()
+                clock.tick(30)
+
+            pygame.quit()
+            </code>
+        <footer>
+            <p>&copy; 2024 Rasya Febrian Dema. Dibuat dengan sigma dan dedikasi.</p>
+        </footer>
+    </div>
